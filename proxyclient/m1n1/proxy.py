@@ -643,6 +643,7 @@ class M1N1Proxy(Reloadable):
     P_NVME_FLUSH = 0xf03
 
     P_MCC_GET_CARVEOUTS = 0x1000
+    P_MCC_CACHE_TEST = 0x1001
 
     P_DISPLAY_INIT = 0x1100
     P_DISPLAY_CONFIGURE = 0x1101
@@ -1139,6 +1140,8 @@ class M1N1Proxy(Reloadable):
 
     def mcc_get_carveouts(self):
         return self.request(self.P_MCC_GET_CARVEOUTS)
+    def mcc_cache_test(self):
+        return self.request(self.P_MCC_CACHE_TEST)
 
     def display_init(self):
         return self.request(self.P_DISPLAY_INIT)

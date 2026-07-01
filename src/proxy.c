@@ -584,7 +584,11 @@ int proxy_process(ProxyRequest *request, ProxyReply *reply)
         case P_MCC_GET_CARVEOUTS:
             reply->retval = (u64)mcc_carveouts;
             break;
-
+        case P_MCC_CACHE_TEST:
+            reply->retval = (u64)mcc_carveouts;
+            mcc_enable_cache();
+            break;
+        
         case P_DISPLAY_INIT:
             reply->retval = display_init();
             break;
