@@ -359,12 +359,7 @@ static int dt_set_memory(void)
     // iOS 12 and below seems to be missing a bunch of stuff...
     if (ADT_GETPROP(adt, anode, "dram-base", &dram_base) < 0) {
         printf("ADT: Failed to get dram-base\n");
-        if (fdt_node_offset_by_compatible(dt, -1, "apple,t8142-aic3")){
-            dram_base = 0x10000000000;
-        }else{
             dram_base = 0x800000000;
-        }
-
     }
 
     if (ADT_GETPROP(adt, anode, "dram-size", &dram_size) < 0) {
