@@ -115,14 +115,6 @@ const struct midr_part_features features_m4 = {
     .actlr_el2 = true,
 };
 
-const struct midr_part_features features_m5 = {
-    .sleep_mode = SLEEP_NONE, // XXX probably new mode required
-    .fast_ipi = true,
-    .siq_cfg = true,
-    .actlr_el2 = true,
-
-};
-
 /*
  * Note: E and P core MUST always have the same features since we store them in
  * a global variable and the init function is called for all cores.
@@ -165,8 +157,8 @@ const struct midr_part_info midr_parts[] = {
     {MIDR_PART_T6040_BRAVA_CHOP_PCORE, "M4 Pro Brava Chop (P core)", NULL, &features_m4},
     {MIDR_PART_T8140_TAHITI_ECORE, "A18 Pro Tahiti (E core)", NULL, &features_m4},
     {MIDR_PART_T8140_TAHITI_PCORE, "A18 Pro Tahiti (P core)", NULL, &features_m4},
-    {MIDR_PART_T8142_TUPAI_ECORE, "M5 Tupai (E core)", NULL, &features_m4},
-    {MIDR_PART_T8142_TUPAI_PCORE, "M5 Tupai (P core)", NULL, &features_m4},
+    {MIDR_PART_T8142_HIDRA_ECORE, "M5 Hidra (E core)", NULL, &features_m4},
+    {MIDR_PART_T8142_HIDRA_PCORE, "M5 Hidra (P core)", NULL, &features_m4},
     {MIDR_PART_T6050_SOTRA_MCORE, "M5 Pro Sotra (M core)", NULL, &features_m4},
     {MIDR_PART_T6050_SOTRA_PCORE, "M5 Pro Sotra (P core)", NULL, &features_m4},
     {MIDR_PART_T6051_SOTRAC_MCORE, "M5 Max Sotra C (M core)", NULL, &features_m4},
